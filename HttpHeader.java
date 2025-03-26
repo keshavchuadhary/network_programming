@@ -5,7 +5,8 @@ import java.util.*;
 public class HttpHeader {
     public static void main(String[] args) {
         try {
-            URL u = new URL("https://sagarmatha.edu.np/wp-content/uploads/2024/07/IMG_9116-scaled-e1722396795347.jpg");
+            URI uri = new URI("https://sagarmatha.edu.np/wp-content/uploads/2024/07/IMG_9116-scaled-e1722396795347.jpg");
+            URL u = uri.toURL();
             
             // Open connection
             HttpURLConnection con = (HttpURLConnection) u.openConnection();
@@ -18,7 +19,7 @@ public class HttpHeader {
             System.out.println("Content Length: " + con.getContentLength());
             System.out.println("Date: " + new Date(con.getDate()));  
             System.out.println("Last Modified: " + new Date(con.getLastModified()));  
-        } catch (IOException ex) {
+        } catch (IOException | URISyntaxException ex) {
             System.err.println("Error: " + ex);
         }
     }
