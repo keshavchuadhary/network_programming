@@ -1,6 +1,6 @@
-// CHeck whether the ip is ipv4 or ipv6
 import java.net.*;
-public class pratical4 {
+
+public class Practical4 {
 
     // Method to determine if the IP address is IPv4 or IPv6
     public static String checkIPAddressType(String ipAddress) {
@@ -21,6 +21,7 @@ public class pratical4 {
     }
 
     public static void main(String[] args) {
+        // Check if an IP address is provided as an argument
         if (args.length != 1) {
             System.out.println("Please provide an IP address as a command-line argument.");
             return;
