@@ -1,0 +1,68 @@
+A simple client-server chat program using java socket
+
+
+server
+1.Create a server socket and bind it the port 8080
+  ServerSocket ss = new ServerSocket(8080)
+
+2.Server listen on port 8080 so it waits for a client to connect and accept() the connection
+  Socket s = ss.accept()
+                accept the client which needs to created the socket on the client side.
+3.Get input and output streams for the socket
+Datainput Stream din = new Datainput Stream(s.getInputStream());
+/*get the input stream from the client
+
+DataOutputStream dout = new DataOutputStream(s.getOutputStream());
+4.Read the input that was typed by the client.Means client write something and server should read using BufferedReader class
+
+BufferedReader readder = new BufferedReader("new InputStreamReader")
+/*Read the input from the client by seven socket*/
+
+5.chat loop;
+
+String str = "", str = "";
+while (str!="stop"){
+    s.o.p ("writing for client reply");
+    str = din.readUTF();
+    S.O.P("client:"+str);
+    /* print the client msg*/
+    
+
+    reply to client ;
+    S.O.P ("enter msg:");
+    str2 = reader.readline()
+    dout.writeUTF(str2);
+    dout.flush();
+}
+
+close the socket 
+din.close()
+s.close()
+ss.close()
+
+
+1.Create a client  socket and connect to server running on the remote machine
+Socket s = new Socket("localhost",8080);
+
+2.Create input/output stream to communication with server
+DataInputStream din = new DatainputStream(s.getOutputStream());
+3.Create a BufferedReader to read input from the client.object is created to read the input from the user (system.in) input stream Reader(system.in());
+
+4. chat loop
+
+String str = "", str2 = "";
+while(str! = "stop") //prompt the user info input
+str = reader.readline() //read the input from the user and store in the str variable.
+dout.writeUTF(str);
+dout.flush();
+S.O.P("wating for seven reply")
+str2 = din.readUTF(); // read the server response stored in the str2
+S.O.P("seven says:" + str2);
+dout.close();  //close dout 
+s.close();   //close the socket
+
+
+5 close the socket
+din.close();
+a.close();
+ss.close();
